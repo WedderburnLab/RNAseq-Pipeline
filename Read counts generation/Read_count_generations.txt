@@ -1,0 +1,28 @@
+
+### RNA-Seq pipeline Run after instalations ###
+
+## to install RSS-pipleine please refer to Myriad notes ##
+
+
+# Running pipeline
+
+### preparation step ###
+$ module purge
+$ module load gcc-libs/4.9.2
+$ module load compilers/gnu/4.9.2 openblas/0.2.14/gnu-4.9.2 java/1.8.0_92
+
+### Running step ###
+$ ./nextflow run main.nf 
+	-with-report XXX.html
+	-with-timeline XXX_timeline.html 
+	-with-dag XXX_info.dag 
+	-c personal.config  
+	--sampleCSV samplesheet_XXX.csv 
+
+# -with-report = the running report files in case of pipeline failure
+# -with-timeline = to measure time run for each step
+# -with-dag = to report general setting in pipeline run
+# -c personal.config = server dependent settings
+# --sampleCSV = add sample sheet for sample that being processed
+
+
